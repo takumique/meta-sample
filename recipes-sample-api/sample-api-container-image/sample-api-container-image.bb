@@ -26,8 +26,6 @@ IMAGE_INSTALL = " \
     sample-api \
 "
 
-# CORE_IMAGE_EXTRA_INSTALL = ""
-
 # Keep the entrypoint empty so that this image can be easily be
 # inherted and re-used for interactive or non interactive images
 OCI_IMAGE_ENTRYPOINT ?= ""
