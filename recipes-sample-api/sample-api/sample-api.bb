@@ -3,7 +3,7 @@ DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRC_URI = "git://github.com/takumique/sample-api-server.git;branch=main;protocol=https"
+SRC_URI = "git://github.com/takumique/sample-api.git;branch=main;protocol=https"
 SRCREV = "248f800ea7e7609de1a929c8d180ec3bc07748d4"
 S = "${WORKDIR}/sources"
 UNPACKDIR = "${S}"
