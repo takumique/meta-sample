@@ -1,0 +1,17 @@
+services:
+  sample-api:
+    image: sample-api:latest
+    command: /usr/bin/run-sample-api.sh
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+  mongo:
+    image: mongo:4.4.18
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - /opt/sample/data/mongo:/data/db
+    restart: unless-stopped
