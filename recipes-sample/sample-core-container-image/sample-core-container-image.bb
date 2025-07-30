@@ -20,10 +20,9 @@ IMAGE_INSTALL = " \
     python3 \
     python3-pip \
     python3-hatchling \
-    gunicorn \
-    uvicorn \
-    fastapi \
-    sample-api \
+    python3-redis \
+    celery \
+    sample-core \
 "
 
 # Keep the entrypoint empty so that this image can be easily be

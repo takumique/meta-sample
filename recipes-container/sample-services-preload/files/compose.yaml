@@ -4,6 +4,23 @@ services:
     command: /usr/bin/run-sample-api.sh
     ports:
       - "8080:8080"
+    environment:
+      - REDIS_DNS_NAME=redis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=0
+    restart: unless-stopped
+  sample-core:
+    image: sample-core:latest
+    command: /usr/bin/run-sample-core.sh
+    environment:
+      - REDIS_DNS_NAME=redis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=0
+    restart: unless-stopped
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
     restart: unless-stopped
   mongo:
     image: mongo:4.4.18

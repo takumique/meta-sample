@@ -11,9 +11,11 @@ do_install() {
     install -d "${D}/opt/sample"
     install -m 644 ${S}/compose.yaml ${D}/opt/sample/compose.yaml
     install -m 644 "${DEPLOY_DIR_IMAGE}/sample-api-container-image-${MACHINE}.rootfs.tar.bz2" "${D}/opt/sample"
+    install -m 644 "${DEPLOY_DIR_IMAGE}/sample-core-container-image-${MACHINE}.rootfs.tar.bz2" "${D}/opt/sample"
 }
 
 FILES:${PN} = "/opt/sample/*"
 
-DEPENDS = "sample-api-container-image"
-do_install[depends] = "sample-api-container-image:do_image_complete"
+DEPENDS = "sample-api-container-image sample-core-container-image"
+do_install[depends] += "sample-api-container-image:do_image_complete"
+do_install[depends] += "sample-core-container-image:do_image_complete"
