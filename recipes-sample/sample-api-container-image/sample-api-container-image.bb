@@ -25,6 +25,7 @@ IMAGE_INSTALL = " \
     fastapi \
     python3-redis \
     celery \
+    paho-mqtt \
     sample-api \
 "
 

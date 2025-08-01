@@ -22,6 +22,7 @@ IMAGE_INSTALL = " \
     python3-hatchling \
     python3-redis \
     celery \
+    paho-mqtt \
     sample-core \
 "
 

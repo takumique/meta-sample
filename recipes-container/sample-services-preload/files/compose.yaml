@@ -8,6 +8,10 @@ services:
       - REDIS_DNS_NAME=redis
       - REDIS_PORT=6379
       - REDIS_DATABASE=0
+      - REPORTER_ADDR=host.docker.internal
+      - REPORTER_PORT=1883
+    extra_hosts:
+      - host.docker.internal:host-gateway
     restart: unless-stopped
   sample-core:
     image: sample-core:latest
@@ -16,6 +20,10 @@ services:
       - REDIS_DNS_NAME=redis
       - REDIS_PORT=6379
       - REDIS_DATABASE=0
+      - REPORTER_ADDR=host.docker.internal
+      - REPORTER_PORT=1883
+    extra_hosts:
+      - host.docker.internal:host-gateway
     restart: unless-stopped
   redis:
     image: redis:latest
