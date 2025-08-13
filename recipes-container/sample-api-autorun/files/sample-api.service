@@ -1,0 +1,11 @@
+[Unit]
+Description=Sample API server on Docker container
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/run-sample-api.sh sample-api latest /opt/sample/sample-api-container-image-raspberrypi4-64.rootfs.tar.bz2
+ExecStop=/usr/bin/docker stop sample-api
+
+[Install]
+WantedBy=multi-user.target
